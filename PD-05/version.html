@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Web3 Version</title>
+    <script language="javascript" type="text/javascript" src="https://unpkg.com/web3@latest/dist/web3.min.js"></script>
+  </head>
+  <body>
+    <h1>Web3 Version:</h1>
+    <pre id="logMessage", style="width: 100%; height: 200px"></pre> 
+    <script text="text/javascript">
+        function log(message) {
+            document.getElementById("logMessage").innerHTML += message + "\n";
+        }
+
+        async function getVersion() {
+            web3 = new Web();
+            log(`Version of web3.js: ${web3.version}`);
+        }
+
+        window.addEventListener('DOMContentLoaded', getVersion);
+    </script>
+  </body>
+</html>
