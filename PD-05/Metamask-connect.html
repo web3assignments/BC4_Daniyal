@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Metamask connect</title>
+  </head>
+  <body>
+    <h1>Metamask connect:</h1>
+
+    <button class="connectEthereumAccount">Connect</button>
+    <h2>Account: <span class="showAccount"></span></h2>
+
+    <script text="text/javascript">
+      const ethereumButton = document.querySelector('.connectEthereumAccount');
+      const showAccount = document.querySelector('.showAccount');
+
+      ethereumButton.addEventListener('click', () => {
+        getAccount();
+      });
+
+      async function getAccount() {
+        const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+        const account = accounts[0];
+        showAccount.innerHTML = account;
+      }
+    </script>
+  </body>
+</html>
